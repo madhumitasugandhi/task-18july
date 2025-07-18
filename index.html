@@ -110,13 +110,13 @@
 
     textarea {
         width: 100%;
-        flex: 1; /* ✅ Desktop par full height */
+        flex: 1; 
         border: 1px solid #ccc;
         padding: 15px;
         font-size: 16px;
         border-radius: 6px;
         resize: none;
-        overflow: hidden; /* No scroll */
+        overflow: hidden;
     }
 
     /* RIGHT PANEL */
@@ -168,8 +168,6 @@
     .check-btn:hover {
         background: #5c2d91;
     }
-
-    /* ✅ RESPONSIVE DESIGN */
     @media (max-width: 900px) {
         .header {
             flex-direction: column;
@@ -188,8 +186,6 @@
             flex-direction: column;
             padding: 15px;
         }
-
-        /* ✅ Mobile par textarea auto-height */
         textarea {
             flex: none;
             min-height: 60px;
@@ -275,10 +271,9 @@
 </div>
 
 <script>
-    // ✅ Auto resize textarea for mobile
     const textarea = document.querySelector("textarea");
     textarea.addEventListener("input", () => {
-        if (window.innerWidth < 900) { // Sirf mobile par
+        if (window.innerWidth < 900) { 
             textarea.style.height = "auto";
             textarea.style.height = textarea.scrollHeight + "px";
         }

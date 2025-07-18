@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Activity Result</title>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        background: rgb(251,252,246);
+        color: #333;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .body-container {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        background: #fff;
+    }
+
+    /* Header */
+    .body-container .header {
+        background: rgb(112,48,160);
+        color: #fff;
+        text-align: center;
+        font-size: 22px;
+        font-weight: bold;
+        padding: 16px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Filters */
+    .body-container .filters {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        justify-content: center;
+        margin: 15px;
+        font-size: 16px;
+    }
+
+    .body-container .filters input {
+        margin-right: 6px;
+    }
+
+    .body-container .wrong-count {
+        text-align: center;
+        font-size: 16px;
+        margin-bottom: 10px;
+        color: #666;
+    }
+
+    /* Content Area */
+    .body-container .content {
+        flex: 1;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        padding: 10px;
+        justify-content: center;
+        transition: all 0.3s ease;
+    }
+
+    .body-container .card {
+        flex: 1;
+        min-width: 250px;
+        max-width: 32%;
+        background: #fff;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 12px;
+        font-size: 14px;
+        line-height: 1.6;
+        overflow-y: auto;
+        display: block;
+    }
+
+    .body-container .card.hidden {
+        display: none;
+    }
+
+    .body-container .card h4 {
+        background: rgb(112,48,160);
+        color: #fff;
+        padding: 8px;
+        font-size: 14px;
+        margin-bottom: 8px;
+        border-radius: 6px;
+        text-align: center;
+    }
+
+    /* Bottom Button */
+    .body-container .bottom {
+        text-align: center;
+        padding: 12px;
+        border-top: 1px solid #ddd;
+    }
+
+    .body-container .check-btn {
+        background: rgb(112,48,160);
+        color: #fff;
+        font-size: 16px;
+        font-weight: bold;
+        border: none;
+        padding: 12px 30px;
+        border-radius: 6px;
+        cursor: pointer;
+    }
+
+    .body-container .check-btn:hover {
+        background: #5c2d91;
+    }
+
+    /* Scrollable cards */
+    .body-container .content .card {
+        max-height: calc(100vh - 280px);
+    }
+
+    /* ✅ Responsive for Mobile */
+    @media (max-width: 900px) {
+        .body-container .header {
+            font-size: 18px;
+        }
+        .body-container .content {
+            flex-direction: column;
+            align-items: center;
+        }
+        .body-container .card {
+            max-width: 90%;
+            min-width: 90%;
+        }
+    }
+</style>
+</head>
+<body>
+<div class="body-container">
+    <!-- Header -->
+    <div class="header">CONGRATULATIONS! YOU'VE PASSED THIS ACTIVITY</div>
+
+    <!-- Filters -->
+    <div class="filters">
+        <label><input type="checkbox" class="filter-checkbox" data-target="original" checked> Original</label>
+        <label><input type="checkbox" class="filter-checkbox" data-target="answer" checked> Your Answer</label>
+        <label><input type="checkbox" class="filter-checkbox" data-target="correction" checked> See Correction</label>
+    </div>
+
+    <!-- Wrong count -->
+    <div class="wrong-count">Wrong words: 19/45</div>
+
+    <!-- Content Section -->
+    <div class="content">
+        <div class="card original">
+            <h4>ORIGINAL</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                
+            </p>
+        </div>
+        <div class="card answer">
+            <h4>YOUR ANSWER</h4>
+            <p>Your answer text will be here.</p>
+        </div>
+        <div class="card correction">
+            <h4>SEE CORRECTION</h4>
+            <p>Corrected text will appear here.</p>
+        </div>
+    </div>
+
+    <!-- Bottom -->
+    <div class="bottom">
+        <button class="check-btn">Play Again</button>
+    </div>
+</div>
+
+<script>
+    const checkboxes = document.querySelectorAll('.filter-checkbox');
+
+    checkboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', function () {
+            const targetClass = this.dataset.target;
+            const targetCard = document.querySelector(`.card.${targetClass}`);
+            if (this.checked) {
+                targetCard.classList.remove('hidden');
+            } else {
+                targetCard.classList.add('hidden');
+            }
+        });
+    });
+</script>
+</body>
+</html>
