@@ -1,259 +1,311 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About Us</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: url('bg.webp') center/cover no-repeat fixed;
-            color: #333;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us - INA Boutique</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: url('bg.webp') center/cover no-repeat fixed;
+      color: #333;
+    }
 
-        .about-page-banner {
-            background: url('bg.webp') center/cover no-repeat;
-            height: 250px;
-            padding: 6rem 2rem 4rem;
-            text-align: center;
-            color: #fff;
-            position: relative;
-        }
+    .about-page-banner {
+      background: url('bg.webp') center/cover no-repeat;
+      height: 250px;
+      padding: 6rem 2rem 4rem;
+      text-align: center;
+      color: #fff;
+      position: relative;
+    }
 
-        .about-page-banner h1 {
-            font-size: 2.5rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            position: relative;
-            z-index: 2;
-        }
+    .about-page-banner h1 {
+      font-size: 2.5rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      position: relative;
+      z-index: 2;
+    }
 
-        .about-animated-line {
-            height: 4px;
-            width: 150px;
-            background-color: #fff;
-            margin: 0 auto;
-        }
+    .about-animated-line {
+      height: 4px;
+      width: 150px;
+      background-color: #fff;
+      margin: 0 auto;
+    }
 
-        .about-section-title {
-            font-size: 2rem;
-            font-weight: 600;
-            color: #c72d60;
-            margin: 2rem 0 1rem;
-            position: relative;
-            display: inline-block;
-        }
+    .about-section-title {
+      font-size: 2rem;
+      font-weight: 600;
+      color: #c72d60;
+      margin: 2rem 0 1rem;
+      position: relative;
+      display: inline-block;
+    }
 
-        .about-section-title::after {
-            content: '';
-            display: block;
-            height: 4px;
-            width: 50px;
-            background: #c72d60;
-            margin-top: 0.5rem;
-        }
+    .about-section-title::after {
+      content: '';
+      display: block;
+      height: 4px;
+      width: 50px;
+      background: #c72d60;
+      margin-top: 0.5rem;
+    }
 
-        .about-section {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            background: #fff0f6;
-            padding: 2rem 15rem;
-            gap: 2rem;
-        }
+    .about-section {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      background: #fff0f6;
+      padding: 2rem 15rem;
+      gap: 2rem;
+    }
 
-        .about-section.reverse {
-            flex-direction: row-reverse;
-        }
+    .about-section.reverse {
+      flex-direction: row-reverse;
+    }
 
-        .about-image {
-            flex: 1;
-            max-width: 300px;
-            border-radius: 1rem;
-            overflow: hidden;
-        }
+    .aboutimg, .about-image {
+      flex: 1;
+      max-width: 350px;
+      border-radius: 1rem;
+      overflow: hidden;
+    }
 
-        .about-image img {
-            width: 100%;
-            display: block;
-            border-radius: 1rem;
-            object-fit: cover;
-        }
+    .aboutimg img, .about-image img {
+      width: 100%;
+      display: block;
+      border-radius: 1rem;
+      object-fit: cover;
+    }
 
-        .about-text {
-            flex: 1;
-            min-width: 280px;
-        }
+    .about-text {
+      flex: 1;
+      min-width: 280px;
+    }
 
-        .about-text h2 {
-            font-size: 2rem;
-            color: #c72d60;
-            margin-bottom: 1rem;
-        }
+    .about-text h2 {
+      font-size: 2rem;
+      color: #c72d60;
+      margin-bottom: 1rem;
+    }
 
-        .about-text p {
-            font-size: 1.1rem;
-            line-height: 1.7;
-            color: #444;
-        }
+    .about-text p {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      color: #444;
+    }
 
-        .about-overlay-section {
-            background: rgba(0, 0, 0, 0.6);
-            color: white;
-            text-align: center;
-            padding: 80px 20px;
-        }
+    .about-overlay-section {
+      background: rgba(0, 0, 0, 0.6);
+      color: white;
+      text-align: center;
+      padding: 80px 20px;
+    }
 
-        .about-overlay-section h2 {
-            font-size: 1.5rem;
-            max-width: 900px;
-            margin: 0 auto;
-            line-height: 1.6;
-            font-weight: 500;
-        }
+    .about-overlay-section h2 {
+      font-size: 1.5rem;
+      max-width: 900px;
+      margin: 0 auto;
+      line-height: 1.6;
+      font-weight: 500;
+    }
 
-        .about-overlay-section h2::after {
-            content: '';
-            display: block;
-            width: 60px;
-            height: 4px;
-            background: white;
-            margin: 20px auto 0;
-        }
+    .about-overlay-section h2::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 4px;
+      background: white;
+      margin: 20px auto 0;
+    }
 
-        @media (max-width: 768px) {
-            .about-section {
-                flex-direction: column;
-                padding: 2rem 1rem;
-            }
-        }
-    </style>
+    .founder-message {
+      background: #fff5fa;
+      border-left: 4px solid #c72d60;
+      padding: 2rem;
+      border-radius: 0.5rem;
+      margin-top: 1rem;
+    }
+
+    .founder-name {
+      font-family: 'Brush Script MT', cursive;
+      font-size: 1.4rem;
+      color: #c72d60;
+      display: inline-block;
+      margin-top: 1rem;
+    }
+    .fancy-title-wrapper {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  padding-left: 80px;
+}
+
+.fancy-box-big {
+  position: absolute;
+  top: -10px;
+  left: 0;
+  width: 60px;
+  height: 60px;
+  background-color: #c72d60;
+  border-radius: 8px;
+  z-index: 1;
+}
+
+.fancy-box-small {
+  position: absolute;
+  top: -30px;
+  left: 50px;
+  width: 30px;
+  height: 30px;
+  background-color:#c72d60;
+  border: 2px solid white;
+  border-radius: 6px;
+  z-index: 2;
+}
+
+.fancy-title {
+  position: relative;
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-weight: 600;
+  color: #c72d60;
+  z-index: 3;
+}
+.fancy-title span {
+  color: #c72d60;
+}
+
+
+    @media (max-width: 768px) {
+      .about-section {
+        flex-direction: column;
+        padding: 2rem 1rem;
+      }
+    }
+  </style>
 </head>
-
 <body>
+  <section class="about-page-banner">
+    <h1>About Us</h1>
+    <div class="about-animated-line"></div>
+  </section>
 
-    <section class="about-page-banner">
-        <h1>About Us</h1>
-        <div class="about-animated-line"></div>
+  <div>
+
+    <section style="background:#fff0f6; padding:3rem 10rem 0; text-align:center;">
+      <h2 class="about-section-title">OUR <span style="color:#c72d60;">MISSION</span> AND <span style="color:#c72d60;">VISION</span></h2>
     </section>
-    <div>
-        <section style="background:#fff0f6; padding:3rem 10rem 0; text-align:center;">
-            <h2 class="about-section-title">OUR <span style="color:#c72d60;">MISSION</span> AND <span
-                    style="color:#c72d60;">VISION</span></h2>
-        </section>
-        <!-- ABOUT INA BOUTIQUE -->
-        <section class="about-section">
-            <div class="aboutimg">
-                <img src="about.webp" alt="INA Boutique">
-            </div>
-            <div class="about-text">
-                <div class="fancy-title-wrapper">
-                    <div class="fancy-box-big"></div>
-                    <div class="fancy-box-small"></div>
-                    <h2 class="fancy-title">ABOUT <span>INA BOUTIQUE</span></h2>
-                </div>
 
-                <p>
-                    Founded on <strong>5th July 2024</strong>, INA Boutique is a modern ecommerce destination committed
-                    to bringing you the finest in fashion, lifestyle, and home décor.
-                    In just one year of dedicated service, we have become a trusted name among customers who value
-                    elegance, authenticity, and exceptional care.
-                    At INA Boutique, shopping is more than a transaction — it's an experience that inspires and
-                    delights. We partner with reputed brands and skilled artisans to curate collections
-                    that blend contemporary style with uncompromising quality.
-                    Our promise is simple: honest pricing, fast delivery, and personalized support that makes every
-                    purchase memorable.
-                    Whether you're refreshing your wardrobe or searching for the perfect gift, INA Boutique is here to
-                    make every moment stylish and special.
-                </p>
-            </div>
-        </section>
+    <!-- ABOUT INA BOUTIQUE -->
+    <section class="about-section">
+      <div class="aboutimg">
+        <img src="about.webp" alt="INA Boutique">
+      </div>
+      <div class="about-text">
+        <div class="fancy-title-wrapper">
+  <div class="fancy-box-big"></div>
+  <div class="fancy-box-small"></div>
+  <h2 class="fancy-title">ABOUT <span>INA BOUTIQUE</span></h2>
+</div>
 
-        <section class="about-section">
-            <div class="about-image">
-                <img src="mission.webp" alt="Our Mission">
-            </div>
-            <div class="about-text">
-                <h2>MISSION</h2>
-                <p>
-                    At [Your Brand Name], our mission is to craft clothing that empowers confidence and celebrates
-                    individuality.
+        <p>
+          Founded on <strong>5th July 2024</strong>, INA Boutique is a modern ecommerce destination committed to bringing you the finest in fashion, lifestyle, and home décor.
+          In just one year of dedicated service, we have become a trusted name among customers who value elegance, authenticity, and exceptional care.
+          At INA Boutique, shopping is more than a transaction — it's an experience that inspires and delights. We partner with reputed brands and skilled artisans to curate collections
+          that blend contemporary style with uncompromising quality.
+          Our promise is simple: honest pricing, fast delivery, and personalized support that makes every purchase memorable.
+          Whether you're refreshing your wardrobe or searching for the perfect gift, INA Boutique is here to make every moment stylish and special.
+        </p>
+      </div>
+    </section>
 
-                    We believe fashion is more than just style — it's a reflection of identity. Every piece we design is
-                    a blend of comfort, elegance, and trend, created for people who dare to express themselves boldly.
+    <!-- MISSION -->
+    <section class="about-section">
+      <div class="about-image">
+        <img src="mission.webp" alt="Our Mission">
+      </div>
+      <div class="about-text">
+       <div class="fancy-title-wrapper">
+  <div class="fancy-box-big"></div>
+  <div class="fancy-box-small"></div>
+  <h2 class="fancy-title"><span>MISSION</span></h2>
+</div>
 
-                    We are committed to sustainable practices, ethical sourcing, and delivering premium-quality apparel
-                    that not only looks good but also feels right. Through innovation, creativity, and customer-first
-                    thinking, we strive to make fashion inclusive, exciting, and accessible to all.
-                </p>
-            </div>
-        </section>
+        <p>
+          At INA Boutique, our mission is to craft clothing that empowers confidence and celebrates individuality.
+          We believe fashion is more than just style — it's a reflection of identity. Every piece we design is
+          a blend of comfort, elegance, and trend, created for people who dare to express themselves boldly.
+          We are committed to sustainable practices, ethical sourcing, and delivering premium-quality apparel
+          that not only looks good but also feels right. Through innovation, creativity, and customer-first
+          thinking, we strive to make fashion inclusive, exciting, and accessible to all.
+        </p>
+      </div>
+    </section>
 
-        <section class="about-section reverse">
-            <div class="about-image">
-                <img src="vission.webp" alt="Our Vision">
-            </div>
-            <div class="about-text">
-                <h2>VISION</h2>
-                <p>
-                    Our vision is to redefine modern fashion by becoming a globally recognized clothing brand known for
-                    its authenticity, purpose, and style.
+    <!-- VISION -->
+    <section class="about-section reverse">
+      <div class="about-image">
+        <img src="vission.webp" alt="Our Vision">
+      </div>
+      <div class="about-text">
+        <div class="fancy-title-wrapper">
+  <div class="fancy-box-big"></div>
+  <div class="fancy-box-small"></div>
+  <h2 class="fancy-title"><span>VISION</span></h2>
+</div>
 
-                    We aim to inspire a new generation to dress with intention — where style meets meaning. Whether it's
-                    a casual outfit or a statement look, we want our customers to feel powerful, seen, and celebrated.
+        <p>
+          Our vision is to redefine modern fashion by becoming a globally recognized clothing brand known for
+          its authenticity, purpose, and style.
+          We aim to inspire a new generation to dress with intention — where style meets meaning. Whether it's
+          a casual outfit or a statement look, we want our customers to feel powerful, seen, and celebrated.
+          We envision a world where fashion contributes to a better planet. That’s why we continuously
+          innovate toward more sustainable solutions and responsible production.
+          As we grow, our vision remains rooted in building a vibrant, fashion-forward community — where
+          creativity thrives, trends are set, and self-expression is limitless.
+        </p>
+      </div>
+    </section>
 
-                    We envision a world where fashion contributes to a better planet. That’s why we continuously
-                    innovate toward more sustainable solutions and responsible production.
+    <!-- FOUNDER'S MESSAGE -->
+    <section class="about-section reverse">
+      <div class="aboutimg">
+        <img src="about.webp" alt="Founder Message">
+      </div>
+      <div class="about-text">
+        <div class="fancy-title-wrapper">
+  <div class="fancy-box-big"></div>
+  <div class="fancy-box-small"></div>
+  <h2 class="fancy-title"><span>FOUNDER'S MESSAGE</span></h2>
+</div>
 
-                    As we grow, our vision remains rooted in building a vibrant, fashion-forward community — where
-                    creativity thrives, trends are set, and self-expression is limitless.
-                </p>
-            </div>
-        </section>
-        <!-- FOUNDER'S MESSAGE -->
-        <section class="about-section reverse">
-            <div class="aboutimg">
-                <img src="about.webp" alt="Founder Message">
-            </div>
-            <div class="about-text">
-                <div class="fancy-title-wrapper">
-                    <div class="fancy-box-big"></div>
-                    <div class="fancy-box-small"></div>
-                    <h2 class="fancy-title"><span>FOUNDER'S MESSAGE</span></h2>
-                </div>
+        <div class="founder-message">
+          <p>
+            Dear Valued Customers,
+            <br><br>
+            When I envisioned INA Boutique, my dream was simple yet ambitious — to create an online space where fashion meets purpose, and every customer feels celebrated.
+            Over the past year, your trust and support have been our greatest reward and the driving force behind everything we do.
+            <br><br>
+            At INA Boutique, we remain committed to delivering quality you can rely on, service you can count on, and styles that inspire confidence.
+            Thank you for being part of our journey.
+          </p>
+          <span class="founder-name">Madhumita Sugandhi</span><br>
+          <span>Founder, INA Boutique</span>
+        </div>
+      </div>
+    </section>
 
-                <div class="founder-message">
-                    <p>
-                        Dear Valued Customers,
-                        <br><br>
-                        When I envisioned INA Boutique, my dream was simple yet ambitious — to create an online space
-                        where fashion meets purpose, and every customer feels celebrated.
-                        Over the past year, your trust and support have been our greatest reward and the driving force
-                        behind everything we do.
-                        <br><br>
-                        At INA Boutique, we remain committed to delivering quality you can rely on, service you can
-                        count on, and styles that inspire confidence.
-                        Thank you for being part of our journey.
-                    </p>
-                    <span class="founder-name">Madhumita Sugandhi</span><br>
-                    <span>Founder, INA Boutique</span>
-                </div>
-            </div>
-        </section>
+    <!-- CALL TO ACTION / OVERLAY -->
+    <section class="about-overlay-section">
+      <h2>
+        We invite you to schedule a one-on-one consultation with our style experts to explore curated recommendations tailored to your taste, budget, and fashion goals.
+        Let's make your shopping experience extraordinary.
+      </h2>
+    </section>
 
-        <section class="about-overlay-section">
-            <h2>
-                We invite you to schedule a one-on-one meeting with us — a focused discussion that allows us to gain a
-                deeper understanding of your preferences, expectations, and fashion needs.
-
-                This interaction will enable us to curate a personalized experience, thoughtfully aligned with your
-                style,
-                budget, and aspirations.
-            </h2>
-        </section>
-
+  </div>
 </body>
-
 </html>
